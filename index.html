@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Requirements – Asociația Oportunități și Cariere</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600;700&family=Gelasio:wght@700&family=Roboto:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Jost', 'Segoe UI', Arial, sans-serif;
+      font-weight: 300;
+      font-size: 1.25rem;
+      background: #f0ebe3;
+      color: #1a1a1a;
+      line-height: 1.8;
+      padding: 40px 20px;
+    }
+
+    .letter-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .letter {
+      background: #fffcf7;
+      padding: 70px 75px;
+      box-shadow: 0 2px 40px rgba(0,0,0,0.08);
+      border-radius: 2px;
+    }
+
+    @media (max-width: 600px) {
+      .letter { padding: 35px 30px; }
+      body { padding: 20px 10px; }
+    }
+
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #e8dccc;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+
+    .top-row-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .aoc-logo {
+      height: 60px;
+      width: auto;
+    }
+
+    .brand-text .brand-first {
+      display: block;
+      font-family: 'Gelasio', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #2f7973;
+      letter-spacing: 3px;
+      line-height: 1.2;
+    }
+
+    .brand-text .brand-second {
+      display: block;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1d2b5d;
+      letter-spacing: 2px;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .top-logo {
+      height: 28px;
+      width: auto;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: #2c3e50;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: #6b5d4d;
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+
+    .req-list {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .req-list li {
+      padding: 16px 0;
+      border-bottom: 1px solid #e8dccc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .req-list li:last-child { border-bottom: none; }
+
+    .req-list a {
+      font-size: 1.1rem;
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .req-list a:hover { color: #2f7973; }
+
+    .req-list .tag {
+      font-size: 0.8rem;
+      background: #e8dccc;
+      padding: 3px 14px;
+      border-radius: 20px;
+      color: #5a4a3a;
+    }
+
+    .req-list .id-small {
+      font-size: 0.85rem;
+      color: #8b7d6b;
+      font-family: 'Segoe UI', monospace;
+    }
+
+    .footer {
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid #e8dccc;
+      font-size: 0.9rem;
+      color: #8b7d6b;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .footer a {
+      color: #8b7d6b;
+      text-decoration: none;
+    }
+
+    .footer a:hover { color: #2f7973; }
+  </style>
+</head>
+<body>
+
+<div class="letter-wrapper">
+
+  <div class="letter">
+
+    <div class="top-row">
+      <div class="top-row-left">
+        <img class="aoc-logo" src="https://oportunitatisicariere.ro/assets/Header/logo.png" alt="Asociația Oportunități și Cariere">
+        <div class="brand-text">
+          <span class="brand-first">ASOCIAȚIA</span>
+          <span class="brand-second">OPORTUNITĂȚI ȘI CARIERE</span>
+        </div>
+      </div>
+      <img class="top-logo" src="https://peviitor.ro/assets/logo-DV2JQkir.svg" alt="peviitor.ro">
+    </div>
+
+    <h1>Requirements</h1>
+    <p class="subtitle">
+      Specificații și cerințe ale proiectelor din cadrul asociației
+    </p>
+
+    <ul class="req-list">
+      <li>
+        <div>
+          <a href="epics/motor-de-cautare/">Motor de căutare</a>
+          <span class="tag">Epic</span>
+        </div>
+        <span class="id-small">EPIC-000</span>
+      </li>
+      <li>
+        <div>
+          <a href="epics/date-despre-companii/">Date despre companii</a>
+          <span class="tag">Epic</span>
+        </div>
+        <span class="id-small">EPIC-001</span>
+      </li>
+      <li>
+        <div>
+          <a href="epics/locuri-de-munca/">Locuri de muncă</a>
+          <span class="tag">Epic</span>
+        </div>
+        <span class="id-small">EPIC-002</span>
+      </li>
+      <li>
+        <div>
+          <a href="epics/protectia-datelor/">Protecția datelor</a>
+          <span class="tag">Epic</span>
+        </div>
+        <span class="id-small">EPIC-003</span>
+      </li>
+      <li>
+        <div>
+          <a href="epics/scrapere-automatizare/">Scrapere &amp; Automatizare</a>
+          <span class="tag">Epic</span>
+        </div>
+        <span class="id-small">EPIC-004</span>
+      </li>
+      <li>
+        <div>
+          <a href="epics/validare-testare/">Validare &amp; Testare</a>
+          <span class="tag">Epic</span>
+        </div>
+        <span class="id-small">EPIC-005</span>
+      </li>
+      <li>
+        <div>
+          <a href="epics/infrastructura-solr/">Infrastructură SOLR</a>
+          <span class="tag">Epic</span>
+        </div>
+        <span class="id-small">EPIC-006</span>
+      </li>
+      <li>
+        <div>
+          <a href="epics/api-public/">API Public</a>
+          <span class="tag">Epic</span>
+        </div>
+        <span class="id-small">EPIC-007</span>
+      </li>
+      <li>
+        <div>
+          <a href="epics/tools-open-source/">Tools Open Source</a>
+          <span class="tag">Epic</span>
+        </div>
+        <span class="id-small">EPIC-008</span>
+      </li>
+      <li>
+        <div>
+          <a href="epics/gratuitate-nenegociabila/">100% gratuit — garantat</a>
+          <span class="tag">Epic</span>
+        </div>
+        <span class="id-small">EPIC-009</span>
+      </li>
+      <li>
+        <div>
+          <a href="epics/nicio-reclama/">Niciodată reclame</a>
+          <span class="tag">Epic</span>
+        </div>
+        <span class="id-small">EPIC-010</span>
+      </li>
+      <li>
+        <div>
+          <a href="epics/voluntariat-central/">Voluntariat central</a>
+          <span class="tag">Epic</span>
+        </div>
+        <span class="id-small">EPIC-011</span>
+      </li>
+      <li>
+        <div>
+          <a href="epics/resurse-minime-operare/">Resurse minime de operare</a>
+          <span class="tag">Epic</span>
+        </div>
+        <span class="id-small">EPIC-012</span>
+      </li>
+      <li>
+        <div>
+          <a href="epics/performanta-ridicata-resurse-minime/">Performanță maximă</a>
+          <span class="tag">Epic</span>
+        </div>
+        <span class="id-small">EPIC-013</span>
+      </li>
+      <li>
+        <div>
+          <a href="epics/sustenabilitate-voluntari/">Sustenabilitate prin voluntari</a>
+          <span class="tag">Epic</span>
+        </div>
+        <span class="id-small">EPIC-014</span>
+      </li>
+      <li>
+        <div>
+          <a href="epics/fara-date-personale/">Fără date personale</a>
+          <span class="tag">Epic</span>
+        </div>
+        <span class="id-small">EPIC-015</span>
+      </li>
+    </ul>
+
+    <div class="footer">
+      <a href="https://oportunitatisicariere.ro">oportunitatisicariere.ro</a> &nbsp;·&nbsp;
+      <a href="https://peviitor.ro">peviitor.ro</a> &nbsp;·&nbsp;
+      <a href="https://discord.gg/KPMkdUfQNu">Discord</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

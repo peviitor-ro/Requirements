@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Epic: TOOLS OPEN SOURCE – Requirements</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&family=Great+Vibes&family=Gelasio:wght@700&family=Roboto:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Jost', 'Segoe UI', Arial, sans-serif; font-weight: 300; font-size: 1.25rem; background: #f0ebe3; color: #1a1a1a; line-height: 1.8; padding: 40px 20px; }
+    .letter-wrapper { max-width: 780px; margin: 0 auto; }
+    .letter { background: #fffcf7; padding: 70px 75px; box-shadow: 0 2px 40px rgba(0,0,0,0.08); border-radius: 2px; }
+    @media (max-width: 600px) { .letter { padding: 35px 30px; } }
+    .stamp-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .stamp { display: inline-block; font-size: 0.7rem; font-weight: 700; border: 2px solid #c0392b; color: #c0392b; padding: 2px 16px; letter-spacing: 3px; text-transform: uppercase; font-family: 'Jost', 'Segoe UI', Arial, sans-serif; line-height: 1.6; border-radius: 2px; }
+    .req-id { font-size: 0.7rem; font-weight: 600; color: #8b7d6b; font-family: 'Fira Code', 'Segoe UI', monospace; letter-spacing: 0.5px; }
+    .top-row { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e8dccc; padding-bottom: 20px; margin-bottom: 0; }
+    .top-row-left { display: flex; align-items: center; gap: 18px; }
+    .top-row-left .aoc-logo { height: 60px; width: auto; }
+    .top-row-left .brand-text .brand-first { display: block; font-family: 'Gelasio', serif; font-size: 1.15rem; font-weight: 700; color: #2f7973; letter-spacing: 3px; line-height: 1.2; }
+    .top-row-left .brand-text .brand-second { display: block; font-family: 'Roboto', sans-serif; font-size: 0.95rem; font-weight: 600; color: #1d2b5d; letter-spacing: 2px; line-height: 1.2; text-transform: uppercase; }
+    .top-logo { height: 28px; width: auto; }
+    .title { font-size: 1.6rem; font-weight: 600; margin-bottom: 30px; color: #2c3e50; text-align: center; text-transform: uppercase; letter-spacing: 1px; }
+    .title .hl { color: #2f7973; }
+    .body-text p { margin-bottom: 20px; text-align: justify; }
+    .body-text .hl { font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #1d2b5d; }
+    .section { margin-bottom: 35px; }
+    .section h2 { font-size: 1.2rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px; padding-bottom: 5px; border-bottom: 1px solid #e8dccc; text-transform: uppercase; letter-spacing: 0.5px; }
+    .section h3 { font-size: 1.1rem; font-weight: 600; color: #5a4a3a; margin-bottom: 8px; margin-top: 18px; }
+    table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 1rem; }
+    table th, table td { border: 1px solid #e0d6c8; padding: 10px 14px; text-align: left; vertical-align: top; }
+    table th { background: #f5f0e8; font-weight: 600; color: #2c3e50; font-size: 0.95rem; }
+    table td { font-weight: 300; }
+    code { font-family: 'Segoe UI', monospace; font-size: 0.9rem; background: #f5f0e8; padding: 1px 5px; border-radius: 3px; }
+    ul, ol { margin: 10px 0 10px 25px; }
+    ul li, ol li { margin-bottom: 6px; }
+    blockquote { margin: 20px 0; padding: 20px 25px; background: #f5f0e8; border-left: 4px solid #2f7973; font-style: italic; color: #3d3d3d; }
+    blockquote strong { color: #2f7973; }
+    .sig-row { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-bottom: 20px; }
+    .sig-left { display: flex; align-items: center; gap: 18px; }
+    .sig-photo { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid #e8dccc; flex-shrink: 0; }
+    .sig-text { font-family: 'Segoe UI', Arial, sans-serif; }
+    .sig-text .sig-name { font-size: 1.1rem; font-weight: 700; color: #2c3e50; }
+    .sig-text .sig-role { font-size: 0.9rem; color: #8b7d6b; }
+    .sig-text .sig-role span { font-weight: 600; color: #5a4a3a; }
+    .sig-logo { height: 28px; width: auto; }
+    .footer { margin-top: 35px; padding-top: 20px; border-top: 1px solid #e8dccc; font-family: 'Segoe UI', Arial, sans-serif; font-size: 0.9rem; color: #8b7d6b; text-align: center; line-height: 1.6; }
+    .footer a { color: #8b7d6b; text-decoration: none; }
+    .footer a:hover { color: #2f7973; }
+  </style>
+</head>
+<body>
+<div class="letter-wrapper">
+  <div class="letter">
+    <div class="top-row">
+      <div class="top-row-left">
+        <img class="aoc-logo" src="https://oportunitatisicariere.ro/assets/Header/logo.png" alt="Asociația Oportunități și Cariere">
+        <div class="brand-text">
+          <span class="brand-first">ASOCIAȚIA</span>
+          <span class="brand-second">OPORTUNITĂȚI ȘI CARIERE</span>
+        </div>
+      </div>
+      <img class="top-logo" src="https://peviitor.ro/assets/logo-DV2JQkir.svg" alt="peviitor.ro">
+    </div>
+    <div class="stamp-row">
+      <span class="req-id">ID: EPIC-008</span>
+      <span class="stamp">Epic</span>
+    </div>
+    <div style="text-align:center;">
+      <div class="title">
+        <span class="hl">TOOLS OPEN SOURCE</span>
+      </div>
+    </div>
+    <div class="body-text">
+
+      <blockquote>
+        <strong>Tot ce folosim este open source.</strong>
+        De la GitHub la Apache SOLR, de la Python la Docker,
+        fiecare unealtă din acest proiect este liberă,
+        transparentă și construită de comunitate.
+      </blockquote>
+
+      <div class="section">
+        <h2>Principiu</h2>
+        <p>
+          <span class="hl">peviitor.ro</span> nu doar că produce
+          open source — și consumă open source. Fiecare
+          tehnologie din stack este aleasă pentru că este
+          liberă, bine întreținută și accesibilă oricui.
+        </p>
+        <p>
+          Un voluntar poate contribui fără să cumpere nimic,
+          fără licențe plătite, fără platforme proprietare.
+          Un laptop și o conexiune la internet sunt suficiente.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Stack-ul tehnologic</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Unealtă</th>
+              <th>Rol</th>
+              <th>Licență</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>GitHub</strong></td>
+              <td>Găzduire cod, Git, Issues, Projects, Actions, Pages</td>
+              <td>Proprietar (gratuit pentru open source)</td>
+            </tr>
+            <tr>
+              <td><strong>Apache SOLR</strong></td>
+              <td>Motor de căutare full-text, indexare, cluster</td>
+              <td>Apache 2.0</td>
+            </tr>
+            <tr>
+              <td><strong>Python</strong></td>
+              <td>Scraping, API, tooling, validare</td>
+              <td>PSF / Apache 2.0</td>
+            </tr>
+            <tr>
+              <td><strong>PHP</strong></td>
+              <td>Validator, teste unitare</td>
+              <td>PHP License / MIT</td>
+            </tr>
+            <tr>
+              <td><strong>Node.js</strong></td>
+              <td>Scraping cu Puppeteer / Playwright, tooling</td>
+              <td>MIT</td>
+            </tr>
+            <tr>
+              <td><strong>Docker</strong></td>
+              <td>Containerizare SOLR, medii de dezvoltare</td>
+              <td>Apache 2.0</td>
+            </tr>
+            <tr>
+              <td><strong>Git</strong></td>
+              <td>Controlul versiunilor</td>
+              <td>GPL 2.0</td>
+            </tr>
+            <tr>
+              <td><strong>Linux</strong></td>
+              <td>Server, mediu de rulare, GitHub Actions runner</td>
+              <td>GPL 2.0</td>
+            </tr>
+            <tr>
+              <td><strong>VS Code</strong></td>
+              <td>Editor de cod recomandat</td>
+              <td>MIT</td>
+            </tr>
+            <tr>
+              <td><strong>Discord</strong></td>
+              <td>Comunicare comunitate, notificări</td>
+              <td>Proprietar (gratuit)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <h2>GitHub</h2>
+        <p>
+          GitHub este centrul proiectului. Tot codul, toate
+          discuțiile, toate sarcinile și tot deployment-ul
+          trec prin el:
+        </p>
+        <ul>
+          <li>
+            <strong>Repository-uri</strong> — fiecare componentă
+            are propriul repo: scrapere, API, front-end,
+            configurare, documentație
+          </li>
+          <li>
+            <strong>GitHub Actions</strong> — CI/CD:
+            rulează scrapere, testează validări, publică pe
+            GitHub Pages
+          </li>
+          <li>
+            <strong>Issues</strong> — bug-uri, feature-uri,
+            sugestii și sarcini
+          </li>
+          <li>
+            <strong>Projects</strong> — board Kanban pentru
+            management vizual
+          </li>
+          <li>
+            <strong>Pull Requests</strong> — review de cod,
+            discuții și aprobare
+          </li>
+          <li>
+            <strong>GitHub Pages</strong> — găzduire cerințe
+            și documentație
+          </li>
+          <li>
+            <strong>Discussions</strong> — dezbateri și
+            anunțuri
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Apache SOLR</h2>
+        <p>
+          Motorul de căutare. Indexează sute de mii de
+          documente și răspunde în milisecunde. Configurabil
+          via Schema API, extensibil cu plugin-uri, scalabil
+          pe cluster. (Detalii în <a href="../infrastructura-solr/">EPIC-006</a>.)
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Python</h2>
+        <p>
+          Limbajul principal pentru scraping. Ecosistemul
+          PyPI oferă biblioteci pentru orice nevoie:
+          Requests, BeautifulSoup, Scrapy, Selenium, Playwright,
+          FastAPI (pentru API), pytest (pentru testare).
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Docker</h2>
+        <p>
+          SOLR rulează în container Docker. Un simplu
+          <code>docker-compose up</code> pornește întregul
+          mediu de căutare local. Volumele persistente asigură
+          că datele nu se pierd la restart.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Discord</h2>
+        <p>
+          Comunitatea se adună pe Discord. Aici se discută
+          scrapere noi, se raportează bug-uri, se cer
+          help și se celebrează realizări. Notificările
+          automate din GitHub Actions ajung tot aici.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>De ce open source</h2>
+        <ul>
+          <li>
+            <strong>Zero barieră financiară</strong> — oricine
+            poate contribui fără să plătească
+          </li>
+          <li>
+            <strong>Transparență</strong> — codul este public,
+            oricine îl poate verifica, modifica și îmbunătăți
+          </li>
+          <li>
+            <strong>Securitate</strong> — vulnerabilitățile
+            sunt descoperite și reparate de comunitate
+          </li>
+          <li>
+            <strong>Durabilitate</strong> — nu depindem de un
+            vendor sau de o licență care poate dispărea
+          </li>
+          <li>
+            <strong>Educație</strong> — oricine poate învăța
+            citind codul real al unui proiect în producție
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Feature-uri derivate</h2>
+        <ul>
+          <li><strong>Development Setup Guide</strong> — ghid de configurare a mediului local</li>
+          <li><strong>Docker Compose Stack</strong> — configurația Docker pentru SOLR + API</li>
+          <li><strong>GitHub Actions Templates</strong> — workflow-uri standard pentru scrapere</li>
+          <li><strong>VS Code Workspace</strong> — configurare recomandată pentru editor</li>
+          <li><strong>Contributor Onboarding</strong> — ghid pentru noii voluntari</li>
+          <li><strong>Tooling Scripts</strong> — scripturi de automatizare a sarcinilor comune</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="sig-row">
+      <div class="sig-left">
+        <img class="sig-photo" src="https://raw.githubusercontent.com/sebiboga/aboutme/main/poza/sebi_03.jpeg" alt="Boga Sebastian Nicolae">
+        <div class="sig-text">
+          <div class="sig-name">Boga Sebastian Nicolae</div>
+          <div class="sig-role">Product Owner, <span>peviitor.ro</span></div>
+        </div>
+      </div>
+      <img class="sig-logo" src="https://peviitor.ro/assets/logo-DV2JQkir.svg" alt="peviitor.ro">
+    </div>
+    <div class="footer">
+      <a href="../../index.html">&larr; Toate requirement-urile</a> &nbsp;·&nbsp;
+      <a href="https://oportunitatisicariere.ro">oportunitatisicariere.ro</a> &nbsp;·&nbsp;
+      <a href="https://peviitor.ro">peviitor.ro</a> &nbsp;·&nbsp;
+      <a href="https://discord.gg/KPMkdUfQNu">Discord</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
